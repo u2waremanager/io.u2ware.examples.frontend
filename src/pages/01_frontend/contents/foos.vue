@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="d-flex align-center pe-2">
         <v-icon icon="mdi-video-input-component"></v-icon> &nbsp;
-        {{ $t("contents.foos.title") }}&nbsp;
+        {{ $t("frontend.contents.foos.title") }}&nbsp;
         <!-- 
         /////////////////////////////
         // Search Field Start

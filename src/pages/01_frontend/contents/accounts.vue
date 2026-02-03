@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="d-flex align-center pe-2">
         <v-icon icon="mdi-video-input-component"></v-icon> &nbsp;
-        {{ $t("contents.accounts.title") }}&nbsp;
+        {{ $t("frontend.contents.accounts.title") }}&nbsp;
         <!-- 
         //////////////////////////
         // Search Field Start
@@ -11,7 +11,7 @@
         -->
         <v-text-field
           class="ms-10"
-          v-model="searchForm.keyword"
+          v-model="searchForm.username"
           density="compact"
           label="Search"
           prepend-inner-icon="mdi-magnify"
@@ -74,17 +74,6 @@
             <v-icon>mdi-refresh</v-icon>
           </v-btn>
 
-
-          <v-btn
-            class="ms-1"
-            text
-            variant="elevated"
-            color="primary"
-            @click="newAction"
-          >
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
-
           <v-spacer></v-spacer>
         </template>
       </v-data-table-server>
@@ -112,14 +101,17 @@
                 variant="outlined"
               ></v-text-field>
 
+
               <v-text-field
-                v-model="editForm.password"
+                v-model="editForm.provider"
                 :rules="[$rules.requried]"
-                label="new password"
-                placeholder="new password"
+                label="provider"
+                placeholder="provider"
+                :disabled="!isNew"
                 hint="......."
                 variant="outlined"
               ></v-text-field>
+
 
 
               <v-select
@@ -201,8 +193,9 @@ export default {
 
       headers: [
         { key: "username", title: "username", align: "start" },
+        { key: "provider", title: "provider", align: "start" },
         { key: "roles", title: "roles", align: "end" },
-        // { key: "updated.timestamp", title: "updatedTimestamp", align: "end" },
+        { key: "updated.timestamp", title: "updatedTimestamp", align: "end" },
       ],
       sortBy: [
         {key: "updated.timestamp", order: "desc" }
@@ -237,23 +230,23 @@ export default {
     // handle....
     ////////////////////////////////////////
     handleCreate(){
-      return $exampleServer.users.create(this.editForm);
+      return $exampleServer.accounts.create(this.editForm);
     },
     handleRead(entity){
-      return $exampleServer.users.read(entity);
+      return $exampleServer.accounts.read(entity);
     },
     handleUpdate(){
-      return $exampleServer.users.update(this.editForm);
+      return $exampleServer.accounts.update(this.editForm);
     },
     handleDelete(){
-      return $exampleServer.users.delete(this.editForm);
+      return $exampleServer.accounts.delete(this.editForm);
     },
     handleSearch(query){
-      return $exampleServer.users.search(this.searchForm, query);
+      return $exampleServer.accounts.search(this.searchForm, query);
     },
     handleEntities(res){
       this.entitiesTotal = res.page.totalElements;
-      this.entities = res._embedded.users;
+      this.entities = res._embedded.accounts;
       return res;
     },
     handleEntity(res){
@@ -332,7 +325,8 @@ export default {
           return this.confirmError(e);
         })
         .catch((e) => {
-          this.$router.push("/");
+          console.log(x, "searchAction", 2, e);
+          // this.$router.push("/");
         });
     },
 

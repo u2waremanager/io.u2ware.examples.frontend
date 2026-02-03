@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="d-flex align-center pe-2">
         <v-icon icon="mdi-video-input-component"></v-icon> &nbsp;
-        {{ $t("contents.sessions.title") }}&nbsp;
+        {{ $t("frontend.contents.sessions.title") }}&nbsp;
         <!-- 
         //////////////////////////
         // Search Field Start
@@ -234,11 +234,11 @@ export default {
           return this.actionEnd(false);
         })
         .catch((e) => {
-          console.log(x, "searchAction", 2, r);
+          console.log(x, "searchAction", 2, e);
           return this.confirmError(e);
         })
         .catch((e) => {
-          // this.$router.push("/");
+          this.$router.push("/");
         });
     },
 
