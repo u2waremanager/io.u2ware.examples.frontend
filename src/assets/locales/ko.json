@@ -47,11 +47,8 @@
             "sessions" : {
                 "title" : "Sessions"
             },
-            "users" : {
-                "title" : "Users"
-            },
-            "tokens" : {
-                "title" : "Tokens"
+            "accounts" : {
+                "title" : "Accounts"
             }
         } 
 

@@ -42,8 +42,7 @@
         <v-list-item to="/contents/sessions"> Session </v-list-item>
         <v-divider></v-divider>
         <v-list-subheader v-if="isAdmin">Accounts</v-list-subheader>
-        <v-list-item v-if="isAdmin" to="/contents/users">Users</v-list-item>
-        <v-list-item v-if="isAdmin" to="/contents/tokens">Tokens</v-list-item>
+        <v-list-item v-if="isAdmin" to="/contents/accounts">Accounts</v-list-item>
       </v-list>
     </v-navigation-drawer>
 

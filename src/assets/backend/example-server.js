@@ -217,12 +217,12 @@ const $server = {
   /////////////////////////////////////
   //
   /////////////////////////////////////
-  nodes: {
+  sessions: {
     search(data, params) {
       return $server.api
         .execute((e) => ({
           method: "POST",
-          url: $server.api.url(e, "/api/nodes/search"),
+          url: $server.api.url(e, "/api/sessions/search"),
           headers: $server.api.headers(e, {}),
           params: $server.api.pageable(params),
           data: data,
@@ -231,7 +231,7 @@ const $server = {
     create(data) {
       return $server.api.execute((e) => ({
         method: "POST",
-        url: $server.api.url(e, "/api/nodes"),
+        url: $server.api.url(e, "/api/sessions"),
         headers: $server.api.headers(e, {}),
         data: data,
       }));

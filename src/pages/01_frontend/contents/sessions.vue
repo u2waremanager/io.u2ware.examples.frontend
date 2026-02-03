@@ -76,8 +76,8 @@
 
 <script>
 const x = "[/contents/sessions]";
-import $restServer from "@/assets/backend/example-server.js";
-import $contentsStore from "@/assets/stores/contents.js";
+import $exampleServer from "@/assets/backend/example-server.js";
+import $common from "@/assets/stores/common.js";
 
 export default {
   data: () => ({
@@ -130,8 +130,8 @@ export default {
   },
 
   computed: {
-    subtitle: $contentsStore.computed.subtitle,
-    userinfo : $contentsStore.computed.userinfo,
+    subtitle: $common.computed.subtitle,
+    userinfo : $common.computed.userinfo,
   },
 
   methods: {
@@ -140,19 +140,19 @@ export default {
     // handle....
     ////////////////////////////////////////
     handleCreate(){
-      return $restServer.sessions.create(this.editForm);
+      return $exampleServer.sessions.create(this.editForm);
     },
     handleRead(entity){
-      return $restServer.sessions.read(entity);
+      return $exampleServer.sessions.read(entity);
     },
     handleUpdate(){
-      return $restServer.sessions.update(this.editForm);
+      return $exampleServer.sessions.update(this.editForm);
     },
     handleDelete(){
-      return $restServer.sessions.delete(this.editForm);
+      return $exampleServer.sessions.delete(this.editForm);
     },
     handleSearch(query){
-      return $restServer.sessions.search(this.searchForm, query);
+      return $exampleServer.sessions.search(this.searchForm, query);
     },
     handleEntities(res){
       this.entitiesTotal = res.page.totalElements;
@@ -227,14 +227,14 @@ export default {
           return this.handleSearch(params);
         })
         .then((r) => {
-          console.log(1, r);
+          console.log(x, "searchAction", 1, r);
           return this.handleEntities(r);
         })
         .then((r) => {
           return this.actionEnd(false);
         })
         .catch((e) => {
-          console.log(2, e);
+          console.log(x, "searchAction", 2, r);
           return this.confirmError(e);
         })
         .catch((e) => {

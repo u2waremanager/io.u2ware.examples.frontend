@@ -26,14 +26,13 @@ declare module 'vue-router/auto-routes' {
     '/accounts/logoff': RouteRecordInfo<'/accounts/logoff', '/accounts/logoff', Record<never, never>, Record<never, never>>,
     '/accounts/logon': RouteRecordInfo<'/accounts/logon', '/accounts/logon', Record<never, never>, Record<never, never>>,
     '/accounts/logout': RouteRecordInfo<'/accounts/logout', '/accounts/logout', Record<never, never>, Record<never, never>>,
-    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/bars' | '/contents/foos' | '/contents/items' | '/contents/sessions' | '/contents/tokens' | '/contents/users'>,
+    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/accounts' | '/contents/bars' | '/contents/foos' | '/contents/items' | '/contents/sessions'>,
     '/contents/': RouteRecordInfo<'/contents/', '/contents', Record<never, never>, Record<never, never>>,
+    '/contents/accounts': RouteRecordInfo<'/contents/accounts', '/contents/accounts', Record<never, never>, Record<never, never>>,
     '/contents/bars': RouteRecordInfo<'/contents/bars', '/contents/bars', Record<never, never>, Record<never, never>>,
     '/contents/foos': RouteRecordInfo<'/contents/foos', '/contents/foos', Record<never, never>, Record<never, never>>,
     '/contents/items': RouteRecordInfo<'/contents/items', '/contents/items', Record<never, never>, Record<never, never>>,
     '/contents/sessions': RouteRecordInfo<'/contents/sessions', '/contents/sessions', Record<never, never>, Record<never, never>>,
-    '/contents/tokens': RouteRecordInfo<'/contents/tokens', '/contents/tokens', Record<never, never>, Record<never, never>>,
-    '/contents/users': RouteRecordInfo<'/contents/users', '/contents/users', Record<never, never>, Record<never, never>>,
     '/examples': RouteRecordInfo<'/examples', '/examples', Record<never, never>, Record<never, never>>,
   }
 
@@ -81,11 +80,15 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/pages/01_frontend/contents.vue': {
-      routes: '/contents' | '/contents/' | '/contents/bars' | '/contents/foos' | '/contents/items' | '/contents/sessions' | '/contents/tokens' | '/contents/users'
+      routes: '/contents' | '/contents/' | '/contents/accounts' | '/contents/bars' | '/contents/foos' | '/contents/items' | '/contents/sessions'
       views: 'default'
     }
     'src/pages/01_frontend/contents/index.vue': {
       routes: '/contents/'
+      views: never
+    }
+    'src/pages/01_frontend/contents/accounts.vue': {
+      routes: '/contents/accounts'
       views: never
     }
     'src/pages/01_frontend/contents/bars.vue': {
@@ -102,14 +105,6 @@ declare module 'vue-router/auto-routes' {
     }
     'src/pages/01_frontend/contents/sessions.vue': {
       routes: '/contents/sessions'
-      views: never
-    }
-    'src/pages/01_frontend/contents/tokens.vue': {
-      routes: '/contents/tokens'
-      views: never
-    }
-    'src/pages/01_frontend/contents/users.vue': {
-      routes: '/contents/users'
       views: never
     }
     'src/pages/01_frontend/examples.vue': {

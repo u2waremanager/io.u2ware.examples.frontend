@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="d-flex align-center pe-2">
         <v-icon icon="mdi-video-input-component"></v-icon> &nbsp;
-        {{ $t("contents.users.title") }}&nbsp;
+        {{ $t("contents.accounts.title") }}&nbsp;
         <!-- 
         //////////////////////////
         // Search Field Start
@@ -168,9 +168,9 @@
 
 
 <script>
-const x = "[/contents/users]";
-import $restServer from "@/assets/backend/example-server.js";
-import $contentsStore from "@/assets/stores/contents.js";
+const x = "[/contents/accounts]";
+import $exampleServer from "@/assets/backend/example-server.js";
+import $common from "@/assets/stores/common.js";
 
 export default {
   data: () => ({
@@ -227,8 +227,8 @@ export default {
   },
 
   computed: {
-    subtitle: $contentsStore.computed.subtitle,
-    userinfo : $contentsStore.computed.userinfo,
+    subtitle: $common.computed.subtitle,
+    userinfo : $common.computed.userinfo,
   },
 
   methods: {
@@ -237,19 +237,19 @@ export default {
     // handle....
     ////////////////////////////////////////
     handleCreate(){
-      return $restServer.users.create(this.editForm);
+      return $exampleServer.users.create(this.editForm);
     },
     handleRead(entity){
-      return $restServer.users.read(entity);
+      return $exampleServer.users.read(entity);
     },
     handleUpdate(){
-      return $restServer.users.update(this.editForm);
+      return $exampleServer.users.update(this.editForm);
     },
     handleDelete(){
-      return $restServer.users.delete(this.editForm);
+      return $exampleServer.users.delete(this.editForm);
     },
     handleSearch(query){
-      return $restServer.users.search(this.searchForm, query);
+      return $exampleServer.users.search(this.searchForm, query);
     },
     handleEntities(res){
       this.entitiesTotal = res.page.totalElements;
