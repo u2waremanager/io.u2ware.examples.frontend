@@ -226,4 +226,4 @@ node_modules/
 #
 ##########################
 /src/main/resources/META-INF/resources/*
-typed-router.d.ts
+/typed-router.d.ts

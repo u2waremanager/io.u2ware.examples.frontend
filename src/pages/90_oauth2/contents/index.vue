@@ -30,6 +30,9 @@ export default {
   methods: {},
 
   mounted() {
+    this.subtitle = x
+
+
   },
 };
 </script>

@@ -3,17 +3,60 @@
     "locale" : "KO",
 
 
-    "index" : {
-        "bar" : {
-            "title" : "",
-            "start" : "시작하기"
+    "oauth2" : {
+        "index" : {
+            "title" : "U2ware Oauth2",
+            "start" : "시스템 관리"
         },
 
-        "navigation" : {
-            "home" : "Monitoring",
-            "messages" : "Messaging"
+        "contents" : {
+            "users" : {
+                "title" : "Users"
+            },
+            "tokens" : {
+                "title" : "Tokens"
+            }
+        }   
+    },
+
+    "stomp" : {
+        "index" : {
+            "title" : "U2ware STOMP",
+            "start" : "모니터링"
         }
     },
+
+    "frontend" : {
+        "index" : {
+            "title" : "U2ware Examples",
+            "start" : "시작하기"
+        },
+        "contents" : {
+            "bar" : {
+                "title" : "Contents :: "
+            },
+            "foos" : {
+                "title" : "Foos"
+            },
+            "bars" : {
+                "title" : "Bars"
+            },
+            "items" : {
+                "title" : "Items"
+            },
+            "sessions" : {
+                "title" : "Sessions"
+            },
+            "users" : {
+                "title" : "Users"
+            },
+            "tokens" : {
+                "title" : "Tokens"
+            }
+        } 
+
+    },
+
 
 
     "accounts" : {
@@ -37,32 +80,6 @@
     },
 
 
-    "contents" : {
-
-        "bar" : {
-            "title" : "Contents :: "
-        },
-        "foos" : {
-            "title" : "Foos"
-        },
-        "bars" : {
-            "title" : "Bars"
-        },
-        "items" : {
-            "title" : "Items"
-        },
-        "sessions" : {
-            "title" : "Sessions"
-        },
-        "users" : {
-            "title" : "Users"
-        },
-        "tokens" : {
-            "title" : "Tokens"
-        }
-    },
-
-
 
     "$rules" : {
         "required" : "필수 입력 항목입니다.",
@@ -79,8 +96,6 @@
         "confirm" : {
             "title" : "검토"
             ,
-            "message" : "{0}"
-            ,
             "yes" : "확인"
             ,
             "no" : "취소"
@@ -88,8 +103,6 @@
         ,
         "alert" : {
             "title" : "알림"
-            ,
-            "message" : "{0}"
             ,
             "yes" : "확인"
         },

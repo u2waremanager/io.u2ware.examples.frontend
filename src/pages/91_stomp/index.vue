@@ -5,7 +5,7 @@
         <U2wareAvatar></U2wareAvatar>
       </router-link>
 
-      <v-toolbar-title> {{ $t("index.bar.title") }} </v-toolbar-title>
+      <v-toolbar-title> {{ $t("stomp.index.title") }} </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -15,7 +15,7 @@
         color="error"
         @click="start"
       >
-        <v-icon>mdi-account</v-icon> {{ $t("index.bar.start") }}
+        <v-icon>mdi-account</v-icon> {{ $t("stomp.index.start") }}
       </v-btn>
     </v-app-bar>
 

@@ -6,7 +6,7 @@
       </router-link>
 
       <v-toolbar-title>
-        {{ $t("index.bar.title") }} ::: {{ subtitle }}
+        {{ $t("oauth2.index.title") }} ::: {{ subtitle }}
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -90,6 +90,8 @@ export default {
   },
 
   mounted() {
+
+
     $oauth2Server.oauth2
       .userinfo("ROLE_ADMIN")
       .then((r) => {

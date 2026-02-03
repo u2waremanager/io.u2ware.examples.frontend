@@ -6,7 +6,7 @@
       </router-link>
 
       <v-toolbar-title>
-        {{ $t("contents.bar.title") }} {{ subtitle }}
+        {{ $t("stomp.index.title") }} ::: {{ subtitle }}
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -87,6 +87,8 @@ export default {
   },
 
   mounted() {
+
+    this.subtitle = x;
 
     $oauth2Server.oauth2
       .userinfo("ROLE_ADMIN")

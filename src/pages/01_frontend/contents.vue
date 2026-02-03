@@ -6,7 +6,7 @@
       </router-link>
 
       <v-toolbar-title>
-        {{ $t("contents.bar.title") }} {{ subtitle }}
+        {{ $t("frontend.index.title") }} {{ subtitle }}
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -111,20 +111,20 @@ export default {
       .catch((r) => {
 
           return $oauth2Server.oauth2.available(r)
-            .then((r) => {
-              if(true == r) {
+            .then((e) => {
+              if(true == e) {
                 console.log(x, "mounted()", 2, r);
-                this.username = r.username;
-                this.isAdmin = false;
+                // this.username = r.username;
+                // this.isAdmin = false;
 
-              }else if(false == r) {
+              }else if(false == e) {
                 console.log(x, "mounted()", 3, r);
-                this.$dialog.alert("관리자 기능 비활성화");         
+                // this.$dialog.alert("관리자 기능 비활성화");         
 
               }else{
                 console.log(x, "mounted()", 4, r);
-                this.username = "Anonymous";
-                this.isAdmin = true;
+                // this.username = "Anonymous";
+                // this.isAdmin = true;
               }
             })
 

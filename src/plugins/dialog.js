@@ -11,21 +11,21 @@ class ConfirmDialog {
     this.$confirm = $confirm;
   }
 
-  confirm(formattings, error) {
+  confirm(code, error) {
 
     return new Promise((resolve, reject) => {
 
-      let isArray = Array.isArray(formattings);
-      let args = isArray ? formattings : [formattings];
+      // let isArray = Array.isArray(formattings);
+      // let args = isArray ? formattings : [formattings];
 
       let title = $t("$dialog.confirm.title");
-      let message = $t("$dialog.confirm.message", args);
       let yes = $t("$dialog.confirm.yes");
       let no = $t("$dialog.confirm.no");
+      let msg = $t(code); if(msg == code) { msg = code;}
 
       this.$confirm({
         title: title,
-        message: message,
+        message: msg,
         button: {
           yes: yes,
           no: no,
@@ -46,22 +46,22 @@ class ConfirmDialog {
     });
   }
 
-  alert(formattings, error) {
+  alert(code, error) {
 
     return new Promise((resolve, reject) => {
 
-      let isArray = Array.isArray(formattings);
-      let args = isArray ? formattings : [formattings];
-
+      // let isArray = Array.isArray(formattings);
+      // let args = isArray ? formattings : [formattings];
+      // let message = $t("$dialog.alert.message", args);
 
       let title = $t("$dialog.alert.title");
-      let message = $t("$dialog.alert.message", args);
       let yes = $t("$dialog.alert.yes");
+      let msg = $t(code); if(msg == code) { msg = code;}
 
 
       this.$confirm({
         title: title,
-        message: message,
+        message: msg,
         button: {
           yes: yes,
         },

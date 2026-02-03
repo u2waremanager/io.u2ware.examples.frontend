@@ -5,7 +5,7 @@
         <U2wareAvatar></U2wareAvatar>
       </router-link>
 
-      <v-toolbar-title> {{ $t("index.bar.title") }} </v-toolbar-title>
+      <v-toolbar-title> {{ $t("frontend.index.title") }} </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
