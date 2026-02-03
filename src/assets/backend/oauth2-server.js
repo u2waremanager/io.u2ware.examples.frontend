@@ -73,13 +73,6 @@ const $server = {
         })
     },
 
-    providers() {
-      return $server.api.execute((e) => ({
-        method: "GET",
-        url: $server.api.url(e, "/oauth2/providers")  
-      }));
-    },
-
     userinfo(role) {
       return $server.api.execute((e) => ({
         method: "GET",
@@ -94,6 +87,16 @@ const $server = {
         return r;
       });
     },
+
+
+    providers() {
+      return $server.api.execute((e) => ({
+        method: "GET",
+        url: $server.api.url(e, "/oauth2/providers")  
+      }));
+    },
+
+
 
     login(query){
       let token = query.id_token;

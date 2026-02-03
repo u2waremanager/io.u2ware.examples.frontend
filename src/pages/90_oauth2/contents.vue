@@ -91,7 +91,6 @@ export default {
 
   mounted() {
 
-
     $oauth2Server.oauth2
       .userinfo("ROLE_ADMIN")
       .then((r) => {

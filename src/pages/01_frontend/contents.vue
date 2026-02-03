@@ -108,25 +108,9 @@ export default {
         this.isAdmin = r["ROLE_ADMIN"];
       })
       .catch((r) => {
-
-          return $oauth2Server.oauth2.available(r)
-            .then((e) => {
-              if(true == e) {
-                console.log(x, "mounted()", 2, r);
-                // this.username = r.username;
-                // this.isAdmin = false;
-
-              }else if(false == e) {
-                console.log(x, "mounted()", 3, r);
-                // this.$dialog.alert("관리자 기능 비활성화");         
-
-              }else{
-                console.log(x, "mounted()", 4, r);
-                // this.username = "Anonymous";
-                // this.isAdmin = true;
-              }
-            })
-
+        console.log(x, "mounted()", 2, r);
+        $common.computed.userinfo.set(undefined);
+        this.$router.push(`/`);
       });
 
 

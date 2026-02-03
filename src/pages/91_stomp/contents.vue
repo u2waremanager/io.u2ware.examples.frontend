@@ -45,6 +45,7 @@
 <script>
 const x = "[/contents]";
 import $oauth2Server from "@/assets/backend/oauth2-server";
+import $stompServer from "@/assets/backend/stomp-server";
 import $common from "@/assets/stores/common.js";
 
 export default {
@@ -90,7 +91,7 @@ export default {
 
     this.subtitle = x;
 
-    $oauth2Server.oauth2
+    $stompServer.oauth2
       .userinfo("ROLE_ADMIN")
       .then((r) => {
         console.log(x, "mounted()", 1, r);
@@ -99,16 +100,9 @@ export default {
         this.isAdmin = r["ROLE_ADMIN"];
       })
       .catch((r) => {
-        // return $oauth2Server.oauth2.available(r)
-        //   .then((r) => {
-        //     console.log(x, "mounted()", 2, r);
-        //     this.username = "Anonymous";
-        //     this.isAdmin = true;
-        //   })
-        //   .catch((r) => {
-        //     console.log(x, "mounted()", 3, r);
-        //     this.$router.push(`/`);
-        //   })
+        console.log(x, "mounted()", 2, r);
+        $common.computed.userinfo.set(undefined);
+        this.$router.push(`/`);
       });    
       ;
   },

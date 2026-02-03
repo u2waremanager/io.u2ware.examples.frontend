@@ -51,6 +51,28 @@ const $server = {
     },
   },
 
+
+  /////////////////////////////////////
+  //
+  /////////////////////////////////////
+  oauth2: {
+
+    userinfo(role) {
+      return $server.api.execute((e) => ({
+        method: "GET",
+        url: $server.api.url(e, "/oauth2/userinfo") ,
+        headers: $server.api.headers(e, {}),
+      })).then(r => {
+        if(role == undefined) return r;   
+        if(r.authorities == undefined) return r;
+        r[role] = r.authorities.findIndex(e => e == role) > -1;
+
+        return r;
+      });
+    },
+  },
+
+
   /////////////////////////////////////
   //
   /////////////////////////////////////
