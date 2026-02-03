@@ -34,9 +34,9 @@
       <v-list nav>
         <v-divider></v-divider>
         <v-list-subheader>Accounts</v-list-subheader>
-        <v-list-item v-if="isAdmin" to="/contents/users">Users</v-list-item>
-        <v-list-item v-if="isAdmin" to="/contents/tokens">Tokens</v-list-item>
-        <v-list-item v-if="isAdmin" to="/contents/keys">Keys</v-list-item>
+        <v-list-item v-if="isAdmin" to="/contents/users">{{ $t("oauth2.contents.users.title") }}</v-list-item>
+        <v-list-item v-if="isAdmin" to="/contents/tokens">{{ $t("oauth2.contents.tokens.title") }}</v-list-item>
+        <v-list-item v-if="isAdmin" to="/contents/keys">{{ $t("oauth2.contents.keys.title") }}</v-list-item>
       </v-list>
     </v-navigation-drawer>
 

@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="d-flex align-center pe-2">
         <v-icon icon="mdi-video-input-component"></v-icon> &nbsp;
-        {{ $t("contents.tokens.title") }}&nbsp;
+        {{ $t("oauth2.contents.tokens.title") }}&nbsp;
         <!-- 
         //////////////////////////
         // Search Field Start
@@ -97,7 +97,7 @@
       <v-dialog v-model="dialog" persistent width="800">
         <v-card
           prepend-icon="mdi-update"
-          :title="$t('contents.tokens.title')"
+          :title="$t('oauth2.contents.tokens.title')"
           :subtitle="editForm.userId"
         >
           <v-card-text>

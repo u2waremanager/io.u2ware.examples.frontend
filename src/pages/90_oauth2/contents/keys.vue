@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="d-flex align-center pe-2">
         <v-icon icon="mdi-video-input-component"></v-icon> &nbsp; 
-        {{ $t("contents.keys.title") }}&nbsp;        
+        {{ $t("oauth2.contents.keys.title") }}&nbsp;        
       </v-card-title>
       <v-card-text>
         <!-- <v-textarea v-model="keys" readonly rows="20"></v-textarea> -->
