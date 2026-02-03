@@ -11,8 +11,16 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  
   plugins: [
-    VueRouter(),
+    VueRouter({
+
+    routesFolder : [ 
+      { src: 'src/pages/00_samples' },
+    // { src: 'src/pages/examples'}
+    // { src: 'src/pages/oauth2'}
+    // { src: 'src/pages/stomp'}
+    ]}),
     Vue({
       template: { transformAssetUrls },
     }),

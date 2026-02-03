@@ -20,39 +20,23 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/[...path]': RouteRecordInfo<'/[...path]', '/:path(.*)', { path: ParamValue<true> }, { path: ParamValue<false> }>,
-    '/accounts': RouteRecordInfo<'/accounts', '/accounts', Record<never, never>, Record<never, never>, '/accounts/' | '/accounts/login' | '/accounts/logoff' | '/accounts/logon' | '/accounts/logout'>,
-    '/accounts/': RouteRecordInfo<'/accounts/', '/accounts', Record<never, never>, Record<never, never>>,
-    '/accounts/login': RouteRecordInfo<'/accounts/login', '/accounts/login', Record<never, never>, Record<never, never>>,
-    '/accounts/logoff': RouteRecordInfo<'/accounts/logoff', '/accounts/logoff', Record<never, never>, Record<never, never>>,
-    '/accounts/logon': RouteRecordInfo<'/accounts/logon', '/accounts/logon', Record<never, never>, Record<never, never>>,
-    '/accounts/logout': RouteRecordInfo<'/accounts/logout', '/accounts/logout', Record<never, never>, Record<never, never>>,
-    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/bars' | '/contents/foos' | '/contents/items' | '/contents/sessions' | '/contents/tokens' | '/contents/users'>,
-    '/contents/': RouteRecordInfo<'/contents/', '/contents', Record<never, never>, Record<never, never>>,
-    '/contents/bars': RouteRecordInfo<'/contents/bars', '/contents/bars', Record<never, never>, Record<never, never>>,
-    '/contents/foos': RouteRecordInfo<'/contents/foos', '/contents/foos', Record<never, never>, Record<never, never>>,
-    '/contents/items': RouteRecordInfo<'/contents/items', '/contents/items', Record<never, never>, Record<never, never>>,
-    '/contents/sessions': RouteRecordInfo<'/contents/sessions', '/contents/sessions', Record<never, never>, Record<never, never>>,
-    '/contents/tokens': RouteRecordInfo<'/contents/tokens', '/contents/tokens', Record<never, never>, Record<never, never>>,
-    '/contents/users': RouteRecordInfo<'/contents/users', '/contents/users', Record<never, never>, Record<never, never>>,
-    '/examples': RouteRecordInfo<'/examples', '/examples', Record<never, never>, Record<never, never>, '/examples/' | '/examples/plugins' | '/examples/plugins/autocomplate' | '/examples/plugins/dialog' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet' | '/examples/wireframes' | '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column'>,
-    '/examples/': RouteRecordInfo<'/examples/', '/examples', Record<never, never>, Record<never, never>>,
-    '/examples/plugins': RouteRecordInfo<'/examples/plugins', '/examples/plugins', Record<never, never>, Record<never, never>, '/examples/plugins/autocomplate' | '/examples/plugins/dialog' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet'>,
-    '/examples/plugins/autocomplate': RouteRecordInfo<'/examples/plugins/autocomplate', '/examples/plugins/autocomplate', Record<never, never>, Record<never, never>>,
-    '/examples/plugins/dialog': RouteRecordInfo<'/examples/plugins/dialog', '/examples/plugins/dialog', Record<never, never>, Record<never, never>>,
-    '/examples/plugins/locales': RouteRecordInfo<'/examples/plugins/locales', '/examples/plugins/locales', Record<never, never>, Record<never, never>>,
-    '/examples/plugins/moment': RouteRecordInfo<'/examples/plugins/moment', '/examples/plugins/moment', Record<never, never>, Record<never, never>>,
-    '/examples/plugins/storeGet': RouteRecordInfo<'/examples/plugins/storeGet', '/examples/plugins/storeGet', Record<never, never>, Record<never, never>>,
-    '/examples/plugins/storeSet': RouteRecordInfo<'/examples/plugins/storeSet', '/examples/plugins/storeSet', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes': RouteRecordInfo<'/examples/wireframes', '/examples/wireframes', Record<never, never>, Record<never, never>, '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column'>,
-    '/examples/wireframes/baseline': RouteRecordInfo<'/examples/wireframes/baseline', '/examples/wireframes/baseline', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/constrained': RouteRecordInfo<'/examples/wireframes/constrained', '/examples/wireframes/constrained', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/discord': RouteRecordInfo<'/examples/wireframes/discord', '/examples/wireframes/discord', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/extended-toolbar': RouteRecordInfo<'/examples/wireframes/extended-toolbar', '/examples/wireframes/extended-toolbar', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/inbox': RouteRecordInfo<'/examples/wireframes/inbox', '/examples/wireframes/inbox', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/side-navigation': RouteRecordInfo<'/examples/wireframes/side-navigation', '/examples/wireframes/side-navigation', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/steam': RouteRecordInfo<'/examples/wireframes/steam', '/examples/wireframes/steam', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/system-bar': RouteRecordInfo<'/examples/wireframes/system-bar', '/examples/wireframes/system-bar', Record<never, never>, Record<never, never>>,
-    '/examples/wireframes/three-column': RouteRecordInfo<'/examples/wireframes/three-column', '/examples/wireframes/three-column', Record<never, never>, Record<never, never>>,
+    '/plugins': RouteRecordInfo<'/plugins', '/plugins', Record<never, never>, Record<never, never>, '/plugins/autocomplate' | '/plugins/dialog' | '/plugins/locales' | '/plugins/moment' | '/plugins/storeGet' | '/plugins/storeSet'>,
+    '/plugins/autocomplate': RouteRecordInfo<'/plugins/autocomplate', '/plugins/autocomplate', Record<never, never>, Record<never, never>>,
+    '/plugins/dialog': RouteRecordInfo<'/plugins/dialog', '/plugins/dialog', Record<never, never>, Record<never, never>>,
+    '/plugins/locales': RouteRecordInfo<'/plugins/locales', '/plugins/locales', Record<never, never>, Record<never, never>>,
+    '/plugins/moment': RouteRecordInfo<'/plugins/moment', '/plugins/moment', Record<never, never>, Record<never, never>>,
+    '/plugins/storeGet': RouteRecordInfo<'/plugins/storeGet', '/plugins/storeGet', Record<never, never>, Record<never, never>>,
+    '/plugins/storeSet': RouteRecordInfo<'/plugins/storeSet', '/plugins/storeSet', Record<never, never>, Record<never, never>>,
+    '/wireframes': RouteRecordInfo<'/wireframes', '/wireframes', Record<never, never>, Record<never, never>, '/wireframes/baseline' | '/wireframes/constrained' | '/wireframes/discord' | '/wireframes/extended-toolbar' | '/wireframes/inbox' | '/wireframes/side-navigation' | '/wireframes/steam' | '/wireframes/system-bar' | '/wireframes/three-column'>,
+    '/wireframes/baseline': RouteRecordInfo<'/wireframes/baseline', '/wireframes/baseline', Record<never, never>, Record<never, never>>,
+    '/wireframes/constrained': RouteRecordInfo<'/wireframes/constrained', '/wireframes/constrained', Record<never, never>, Record<never, never>>,
+    '/wireframes/discord': RouteRecordInfo<'/wireframes/discord', '/wireframes/discord', Record<never, never>, Record<never, never>>,
+    '/wireframes/extended-toolbar': RouteRecordInfo<'/wireframes/extended-toolbar', '/wireframes/extended-toolbar', Record<never, never>, Record<never, never>>,
+    '/wireframes/inbox': RouteRecordInfo<'/wireframes/inbox', '/wireframes/inbox', Record<never, never>, Record<never, never>>,
+    '/wireframes/side-navigation': RouteRecordInfo<'/wireframes/side-navigation', '/wireframes/side-navigation', Record<never, never>, Record<never, never>>,
+    '/wireframes/steam': RouteRecordInfo<'/wireframes/steam', '/wireframes/steam', Record<never, never>, Record<never, never>>,
+    '/wireframes/system-bar': RouteRecordInfo<'/wireframes/system-bar', '/wireframes/system-bar', Record<never, never>, Record<never, never>>,
+    '/wireframes/three-column': RouteRecordInfo<'/wireframes/three-column', '/wireframes/three-column', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -66,144 +50,80 @@ declare module 'vue-router/auto-routes' {
    * @internal
    */
   export interface _RouteFileInfoMap {
-    'src/pages/index.vue': {
+    'src/pages/00_samples/index.vue': {
       routes: '/'
       views: never
     }
-    'src/pages/[...path].vue': {
+    'src/pages/00_samples/[...path].vue': {
       routes: '/[...path]'
       views: never
     }
-    'src/pages/accounts.vue': {
-      routes: '/accounts' | '/accounts/' | '/accounts/login' | '/accounts/logoff' | '/accounts/logon' | '/accounts/logout'
+    'src/pages/00_samples/plugins.vue': {
+      routes: '/plugins' | '/plugins/autocomplate' | '/plugins/dialog' | '/plugins/locales' | '/plugins/moment' | '/plugins/storeGet' | '/plugins/storeSet'
       views: 'default'
     }
-    'src/pages/accounts/index.vue': {
-      routes: '/accounts/'
+    'src/pages/00_samples/plugins/autocomplate.vue': {
+      routes: '/plugins/autocomplate'
       views: never
     }
-    'src/pages/accounts/login.vue': {
-      routes: '/accounts/login'
+    'src/pages/00_samples/plugins/dialog.vue': {
+      routes: '/plugins/dialog'
       views: never
     }
-    'src/pages/accounts/logoff.vue': {
-      routes: '/accounts/logoff'
+    'src/pages/00_samples/plugins/locales.vue': {
+      routes: '/plugins/locales'
       views: never
     }
-    'src/pages/accounts/logon.vue': {
-      routes: '/accounts/logon'
+    'src/pages/00_samples/plugins/moment.vue': {
+      routes: '/plugins/moment'
       views: never
     }
-    'src/pages/accounts/logout.vue': {
-      routes: '/accounts/logout'
+    'src/pages/00_samples/plugins/storeGet.vue': {
+      routes: '/plugins/storeGet'
       views: never
     }
-    'src/pages/contents.vue': {
-      routes: '/contents' | '/contents/' | '/contents/bars' | '/contents/foos' | '/contents/items' | '/contents/sessions' | '/contents/tokens' | '/contents/users'
+    'src/pages/00_samples/plugins/storeSet.vue': {
+      routes: '/plugins/storeSet'
+      views: never
+    }
+    'src/pages/00_samples/wireframes.vue': {
+      routes: '/wireframes' | '/wireframes/baseline' | '/wireframes/constrained' | '/wireframes/discord' | '/wireframes/extended-toolbar' | '/wireframes/inbox' | '/wireframes/side-navigation' | '/wireframes/steam' | '/wireframes/system-bar' | '/wireframes/three-column'
       views: 'default'
     }
-    'src/pages/contents/index.vue': {
-      routes: '/contents/'
+    'src/pages/00_samples/wireframes/baseline.vue': {
+      routes: '/wireframes/baseline'
       views: never
     }
-    'src/pages/contents/bars.vue': {
-      routes: '/contents/bars'
+    'src/pages/00_samples/wireframes/constrained.vue': {
+      routes: '/wireframes/constrained'
       views: never
     }
-    'src/pages/contents/foos.vue': {
-      routes: '/contents/foos'
+    'src/pages/00_samples/wireframes/discord.vue': {
+      routes: '/wireframes/discord'
       views: never
     }
-    'src/pages/contents/items.vue': {
-      routes: '/contents/items'
+    'src/pages/00_samples/wireframes/extended-toolbar.vue': {
+      routes: '/wireframes/extended-toolbar'
       views: never
     }
-    'src/pages/contents/sessions.vue': {
-      routes: '/contents/sessions'
+    'src/pages/00_samples/wireframes/inbox.vue': {
+      routes: '/wireframes/inbox'
       views: never
     }
-    'src/pages/contents/tokens.vue': {
-      routes: '/contents/tokens'
+    'src/pages/00_samples/wireframes/side-navigation.vue': {
+      routes: '/wireframes/side-navigation'
       views: never
     }
-    'src/pages/contents/users.vue': {
-      routes: '/contents/users'
+    'src/pages/00_samples/wireframes/steam.vue': {
+      routes: '/wireframes/steam'
       views: never
     }
-    'src/pages/examples.vue': {
-      routes: '/examples' | '/examples/' | '/examples/plugins/autocomplate' | '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/plugins/dialog' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column' | '/examples/wireframes'
-      views: 'default'
-    }
-    'src/pages/examples/index.vue': {
-      routes: '/examples/'
+    'src/pages/00_samples/wireframes/system-bar.vue': {
+      routes: '/wireframes/system-bar'
       views: never
     }
-    'src/pages/examples/plugins.vue': {
-      routes: '/examples/plugins' | '/examples/plugins/autocomplate' | '/examples/plugins/dialog' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet'
-      views: 'default'
-    }
-    'src/pages/examples/plugins/autocomplate.vue': {
-      routes: '/examples/plugins/autocomplate'
-      views: never
-    }
-    'src/pages/examples/plugins/dialog.vue': {
-      routes: '/examples/plugins/dialog'
-      views: never
-    }
-    'src/pages/examples/plugins/locales.vue': {
-      routes: '/examples/plugins/locales'
-      views: never
-    }
-    'src/pages/examples/plugins/moment.vue': {
-      routes: '/examples/plugins/moment'
-      views: never
-    }
-    'src/pages/examples/plugins/storeGet.vue': {
-      routes: '/examples/plugins/storeGet'
-      views: never
-    }
-    'src/pages/examples/plugins/storeSet.vue': {
-      routes: '/examples/plugins/storeSet'
-      views: never
-    }
-    'src/pages/examples/wireframes.vue': {
-      routes: '/examples/wireframes' | '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column'
-      views: 'default'
-    }
-    'src/pages/examples/wireframes/baseline.vue': {
-      routes: '/examples/wireframes/baseline'
-      views: never
-    }
-    'src/pages/examples/wireframes/constrained.vue': {
-      routes: '/examples/wireframes/constrained'
-      views: never
-    }
-    'src/pages/examples/wireframes/discord.vue': {
-      routes: '/examples/wireframes/discord'
-      views: never
-    }
-    'src/pages/examples/wireframes/extended-toolbar.vue': {
-      routes: '/examples/wireframes/extended-toolbar'
-      views: never
-    }
-    'src/pages/examples/wireframes/inbox.vue': {
-      routes: '/examples/wireframes/inbox'
-      views: never
-    }
-    'src/pages/examples/wireframes/side-navigation.vue': {
-      routes: '/examples/wireframes/side-navigation'
-      views: never
-    }
-    'src/pages/examples/wireframes/steam.vue': {
-      routes: '/examples/wireframes/steam'
-      views: never
-    }
-    'src/pages/examples/wireframes/system-bar.vue': {
-      routes: '/examples/wireframes/system-bar'
-      views: never
-    }
-    'src/pages/examples/wireframes/three-column.vue': {
-      routes: '/examples/wireframes/three-column'
+    'src/pages/00_samples/wireframes/three-column.vue': {
+      routes: '/wireframes/three-column'
       views: never
     }
   }
