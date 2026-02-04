@@ -16,12 +16,11 @@ export default defineConfig({
     VueRouter({
 
     routesFolder : [ 
-      // { src: 'src/pages/00_samples' },
+    { src: 'src/pages'}
+    // { src: 'src/pages/00_samples' },
     // { src: 'src/pages/90_oauth2'}
-    { src: 'src/pages/91_stomp'}
-
+    // { src: 'src/pages/91_stomp'}
     // { src: 'src/pages/01_frontend'}
-
 
     ]}),
     Vue({

@@ -22,7 +22,7 @@ const $server = {
     },
 
     url(env, path) {
-      let paths = (path != null) ? path : ""
+      let paths = (path != null) ? path : "";
       return `${env["VITE_STOMP_SERVER"]}${paths}`;
     },
 
@@ -58,11 +58,13 @@ const $server = {
   oauth2: {
 
     userinfo(role) {
+
       return $server.api.execute((e) => ({
         method: "GET",
         url: $server.api.url(e, "/oauth2/userinfo") ,
         headers: $server.api.headers(e, {}),
-      })).then(r => {
+      }))
+      .then(r => {
         if(role == undefined) return r;   
         if(r.authorities == undefined) return r;
         r[role] = r.authorities.findIndex(e => e == role) > -1;
@@ -86,8 +88,11 @@ const $server = {
           .env("VITE_STOMP_SERVER", "VITE_STOMP_DESTINATION")
           .then((r) => {
             let query = $server.api.query(r);
-            let url = $server.api.url(r, "?"+query);
-            // alert(url);
+            let server = new URL($server.api.url(r));
+
+            let protocol = "https:" == server.protocol ? "wss:" : "ws:";
+            let host = server.host;
+            let url = protocol+"//"+host+"/stomp/websocket?"+query;
 
             $server.stomp.ws = $stompjs.client(url);
             $server.stomp.ws.connect(
