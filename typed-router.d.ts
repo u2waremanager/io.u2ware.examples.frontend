@@ -26,11 +26,8 @@ declare module 'vue-router/auto-routes' {
     '/accounts/logoff': RouteRecordInfo<'/accounts/logoff', '/accounts/logoff', Record<never, never>, Record<never, never>>,
     '/accounts/logon': RouteRecordInfo<'/accounts/logon', '/accounts/logon', Record<never, never>, Record<never, never>>,
     '/accounts/logout': RouteRecordInfo<'/accounts/logout', '/accounts/logout', Record<never, never>, Record<never, never>>,
-    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/keys' | '/contents/tokens' | '/contents/users'>,
+    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/'>,
     '/contents/': RouteRecordInfo<'/contents/', '/contents', Record<never, never>, Record<never, never>>,
-    '/contents/keys': RouteRecordInfo<'/contents/keys', '/contents/keys', Record<never, never>, Record<never, never>>,
-    '/contents/tokens': RouteRecordInfo<'/contents/tokens', '/contents/tokens', Record<never, never>, Record<never, never>>,
-    '/contents/users': RouteRecordInfo<'/contents/users', '/contents/users', Record<never, never>, Record<never, never>>,
     '/examples': RouteRecordInfo<'/examples', '/examples', Record<never, never>, Record<never, never>, '/examples/' | '/examples/plugins' | '/examples/plugins/dialog' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet' | '/examples/wireframes' | '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column'>,
     '/examples/': RouteRecordInfo<'/examples/', '/examples', Record<never, never>, Record<never, never>>,
     '/examples/plugins': RouteRecordInfo<'/examples/plugins', '/examples/plugins', Record<never, never>, Record<never, never>, '/examples/plugins/dialog' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet'>,
@@ -50,7 +47,6 @@ declare module 'vue-router/auto-routes' {
     '/examples/wireframes/system-bar': RouteRecordInfo<'/examples/wireframes/system-bar', '/examples/wireframes/system-bar', Record<never, never>, Record<never, never>>,
     '/examples/wireframes/three-column': RouteRecordInfo<'/examples/wireframes/three-column', '/examples/wireframes/three-column', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
-    '/loginForm': RouteRecordInfo<'/loginForm', '/loginForm', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -64,136 +60,120 @@ declare module 'vue-router/auto-routes' {
    * @internal
    */
   export interface _RouteFileInfoMap {
-    'src/pages/90_oauth2/index.vue': {
+    'src/pages/91_stomp/index.vue': {
       routes: '/'
       views: never
     }
-    'src/pages/90_oauth2/[...path].vue': {
+    'src/pages/91_stomp/[...path].vue': {
       routes: '/[...path]'
       views: never
     }
-    'src/pages/90_oauth2/accounts.vue': {
+    'src/pages/91_stomp/accounts.vue': {
       routes: '/accounts' | '/accounts/' | '/accounts/login' | '/accounts/logoff' | '/accounts/logon' | '/accounts/logout'
       views: 'default'
     }
-    'src/pages/90_oauth2/accounts/index.vue': {
+    'src/pages/91_stomp/accounts/index.vue': {
       routes: '/accounts/'
       views: never
     }
-    'src/pages/90_oauth2/accounts/login.vue': {
+    'src/pages/91_stomp/accounts/login.vue': {
       routes: '/accounts/login'
       views: never
     }
-    'src/pages/90_oauth2/accounts/logoff.vue': {
+    'src/pages/91_stomp/accounts/logoff.vue': {
       routes: '/accounts/logoff'
       views: never
     }
-    'src/pages/90_oauth2/accounts/logon.vue': {
+    'src/pages/91_stomp/accounts/logon.vue': {
       routes: '/accounts/logon'
       views: never
     }
-    'src/pages/90_oauth2/accounts/logout.vue': {
+    'src/pages/91_stomp/accounts/logout.vue': {
       routes: '/accounts/logout'
       views: never
     }
-    'src/pages/90_oauth2/contents.vue': {
-      routes: '/contents' | '/contents/' | '/contents/keys' | '/contents/tokens' | '/contents/users'
+    'src/pages/91_stomp/contents.vue': {
+      routes: '/contents' | '/contents/'
       views: 'default'
     }
-    'src/pages/90_oauth2/contents/index.vue': {
+    'src/pages/91_stomp/contents/index.vue': {
       routes: '/contents/'
       views: never
     }
-    'src/pages/90_oauth2/contents/keys.vue': {
-      routes: '/contents/keys'
-      views: never
-    }
-    'src/pages/90_oauth2/contents/tokens.vue': {
-      routes: '/contents/tokens'
-      views: never
-    }
-    'src/pages/90_oauth2/contents/users.vue': {
-      routes: '/contents/users'
-      views: never
-    }
-    'src/pages/90_oauth2/examples.vue': {
+    'src/pages/91_stomp/examples.vue': {
       routes: '/examples' | '/examples/' | '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/plugins/dialog' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column' | '/examples/wireframes'
       views: 'default'
     }
-    'src/pages/90_oauth2/examples/index.vue': {
+    'src/pages/91_stomp/examples/index.vue': {
       routes: '/examples/'
       views: never
     }
-    'src/pages/90_oauth2/examples/plugins.vue': {
+    'src/pages/91_stomp/examples/plugins.vue': {
       routes: '/examples/plugins' | '/examples/plugins/dialog' | '/examples/plugins/locales' | '/examples/plugins/moment' | '/examples/plugins/storeGet' | '/examples/plugins/storeSet'
       views: 'default'
     }
-    'src/pages/90_oauth2/examples/plugins/dialog.vue': {
+    'src/pages/91_stomp/examples/plugins/dialog.vue': {
       routes: '/examples/plugins/dialog'
       views: never
     }
-    'src/pages/90_oauth2/examples/plugins/locales.vue': {
+    'src/pages/91_stomp/examples/plugins/locales.vue': {
       routes: '/examples/plugins/locales'
       views: never
     }
-    'src/pages/90_oauth2/examples/plugins/moment.vue': {
+    'src/pages/91_stomp/examples/plugins/moment.vue': {
       routes: '/examples/plugins/moment'
       views: never
     }
-    'src/pages/90_oauth2/examples/plugins/storeGet.vue': {
+    'src/pages/91_stomp/examples/plugins/storeGet.vue': {
       routes: '/examples/plugins/storeGet'
       views: never
     }
-    'src/pages/90_oauth2/examples/plugins/storeSet.vue': {
+    'src/pages/91_stomp/examples/plugins/storeSet.vue': {
       routes: '/examples/plugins/storeSet'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes.vue': {
+    'src/pages/91_stomp/examples/wireframes.vue': {
       routes: '/examples/wireframes' | '/examples/wireframes/baseline' | '/examples/wireframes/constrained' | '/examples/wireframes/discord' | '/examples/wireframes/extended-toolbar' | '/examples/wireframes/inbox' | '/examples/wireframes/side-navigation' | '/examples/wireframes/steam' | '/examples/wireframes/system-bar' | '/examples/wireframes/three-column'
       views: 'default'
     }
-    'src/pages/90_oauth2/examples/wireframes/baseline.vue': {
+    'src/pages/91_stomp/examples/wireframes/baseline.vue': {
       routes: '/examples/wireframes/baseline'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/constrained.vue': {
+    'src/pages/91_stomp/examples/wireframes/constrained.vue': {
       routes: '/examples/wireframes/constrained'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/discord.vue': {
+    'src/pages/91_stomp/examples/wireframes/discord.vue': {
       routes: '/examples/wireframes/discord'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/extended-toolbar.vue': {
+    'src/pages/91_stomp/examples/wireframes/extended-toolbar.vue': {
       routes: '/examples/wireframes/extended-toolbar'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/inbox.vue': {
+    'src/pages/91_stomp/examples/wireframes/inbox.vue': {
       routes: '/examples/wireframes/inbox'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/side-navigation.vue': {
+    'src/pages/91_stomp/examples/wireframes/side-navigation.vue': {
       routes: '/examples/wireframes/side-navigation'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/steam.vue': {
+    'src/pages/91_stomp/examples/wireframes/steam.vue': {
       routes: '/examples/wireframes/steam'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/system-bar.vue': {
+    'src/pages/91_stomp/examples/wireframes/system-bar.vue': {
       routes: '/examples/wireframes/system-bar'
       views: never
     }
-    'src/pages/90_oauth2/examples/wireframes/three-column.vue': {
+    'src/pages/91_stomp/examples/wireframes/three-column.vue': {
       routes: '/examples/wireframes/three-column'
       views: never
     }
-    'src/pages/90_oauth2/login.vue': {
+    'src/pages/91_stomp/login.vue': {
       routes: '/login'
-      views: never
-    }
-    'src/pages/90_oauth2/loginForm.vue': {
-      routes: '/loginForm'
       views: never
     }
   }

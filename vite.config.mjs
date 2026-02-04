@@ -17,8 +17,8 @@ export default defineConfig({
 
     routesFolder : [ 
       // { src: 'src/pages/00_samples' },
-    { src: 'src/pages/90_oauth2'}
-    // { src: 'src/pages/91_stomp'}
+    // { src: 'src/pages/90_oauth2'}
+    { src: 'src/pages/91_stomp'}
 
     // { src: 'src/pages/01_frontend'}
 

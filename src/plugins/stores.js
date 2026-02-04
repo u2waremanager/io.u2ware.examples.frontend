@@ -28,11 +28,11 @@ for(let m in modules){
 /////////////////////////////////
 //
 /////////////////////////////////
-const VITE_PERSISTED_KEY = import.meta.env["VITE_PERSISTED_KEY"]
+const VITE_PERSISTED_STATE_KEY = import.meta.env["VITE_PERSISTED_STATE_KEY"]
 // alert(`persistedState_${VITE_PERSISTED_KEY}`);
 
 const persistedState = createPersistedState({
-  key: `${VITE_PERSISTED_KEY}`,
+  key: `${VITE_PERSISTED_STATE_KEY}`,
   paths: persistedPaths,
 });
 
