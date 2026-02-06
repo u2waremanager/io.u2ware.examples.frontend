@@ -5,8 +5,15 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --mode dev",
-    "oauth2": "vite build --mode build --outDir ../io.u2ware.product.oauth2-server/src/main/resources/META-INF/resources/",
-    "stomp": "vite build --mode build --outDir ../io.u2ware.product.stomp-server/src/main/resources/META-INF/resources/",
+    "dev.frontend": "vite --mode dev.frontend",
+    "dev.oauth2":   "vite --mode dev.oauth2",
+    "dev.stomp":    "vite --mode dev.stomp",
+
+    "build":        "vite build --mode build",
+    "build.oauth2": "vite build --mode build.oauth2 --outDir ../io.u2ware.product.oauth2-server/src/main/resources/META-INF/resources/",
+    "build.stomp" : "vite build --mode build.stomp  --outDir  ../io.u2ware.product.stomp-server/src/main/resources/META-INF/resources/",
+
+
     "preview": "vite preview",
     "lint": "eslint . --fix"
   },

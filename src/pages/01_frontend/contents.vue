@@ -38,8 +38,8 @@
         <v-list-item to="/contents/bars"> {{ $t("frontend.contents.bars.title") }} </v-list-item>
         <v-list-item to="/contents/items"> {{ $t("frontend.contents.items.title") }} </v-list-item>
         <v-divider></v-divider>
-        <v-list-subheader>Stomp</v-list-subheader>
-        <v-list-item to="/contents/sessions"> {{ $t("frontend.contents.sessions.title") }} </v-list-item>
+        <v-list-subheader v-if="isAdmin">Stomp</v-list-subheader>
+        <v-list-item v-if="isAdmin" to="/contents/sessions"> {{ $t("frontend.contents.sessions.title") }} </v-list-item>
         <v-divider></v-divider>
         <v-list-subheader v-if="isAdmin">Accounts</v-list-subheader>
         <v-list-item v-if="isAdmin" to="/contents/accounts">{{ $t("frontend.contents.accounts.title") }}</v-list-item>

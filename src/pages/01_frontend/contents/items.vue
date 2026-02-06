@@ -153,17 +153,18 @@
              <entity-field
                 class="ma-2"
                 v-model="editForm.fooLink"
-                density="default"
                 :rules="[$rules.requried]"
                 :items="fooItems"
                 :item-selected="editForm.foo"
                 :item-title="fooItemsTitle"
                 :item-value="fooItemsValue"
                 :loading="fooItemsLoading"
-                placeholder="Foo"
-                variant="outlined"
                 @querySelections="fooItemsQuery"
+                density="default"
+                variant="outlined"
+                placeholder="Foo"
                 hint="......."
+                chips
               >
               </entity-field>
 
@@ -171,19 +172,19 @@
              <entity-field
                 class="ma-2"
                 v-model="editForm.barsLinks"
-                density="default"
                 :rules="[$rules.requried]"
                 :items="barItems"
                 :item-selected="editForm.bars"
                 :item-title="barItemsTitle"
                 :item-value="barItemsValue"
                 :loading="barItemsLoading"
-                placeholder="Bars"
                 @querySelections="barItemsQuery"
+                density="default"
+                variant="outlined"
+                placeholder="Bars"
+                hint="......."
                 multiple
                 chips
-                variant="outlined"
-                hint="......."
               >
               </entity-field>  
 

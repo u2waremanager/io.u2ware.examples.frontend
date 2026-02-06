@@ -1,76 +1,80 @@
 // Plugins
-import Components from 'unplugin-vue-components/vite'
-import Vue from '@vitejs/plugin-vue'
-import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import Fonts from 'unplugin-fonts/vite'
-import VueRouter from 'unplugin-vue-router/vite'
+import Components from "unplugin-vue-components/vite";
+import Vue from "@vitejs/plugin-vue";
+import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
+import Fonts from "unplugin-fonts/vite";
+import VueRouter from "unplugin-vue-router/vite";
 
 // Utilities
-import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'node:url'
+import { defineConfig, loadEnv } from "vite";
+import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  
-  plugins: [
-    VueRouter({
 
-    routesFolder : [ 
-    { src: 'src/pages'}
-    // { src: 'src/pages/00_samples' },
-    // { src: 'src/pages/90_oauth2'}
-    // { src: 'src/pages/91_stomp'}
-    // { src: 'src/pages/01_frontend'}
+export default ({ mode }) => {
+  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+  const systemRoutesFolder = process.env["VITE_ROUTES_FOLDER"];
 
-    ]}),
-    Vue({
-      template: { transformAssetUrls },
-    }),
-    // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
-    Vuetify({
-      autoImport: true,
-      styles: {
-        configFile: 'src/styles/settings.scss',
-      },
-    }),
-    Components(),
-    Fonts({
-      fontsource: {
-        families: [
+  return defineConfig({
+    plugins: [
+      VueRouter({
+        routesFolder: [
           {
-            name: 'Roboto',
-            weights: [100, 300, 400, 500, 700, 900],
-            styles: ['normal', 'italic'],
+            src: systemRoutesFolder,
+            // { src: 'src/pages'}
+            // { src: 'src/pages/00_samples' },
+            // { src: 'src/pages/90_oauth2'}
+            // { src: 'src/pages/91_stomp'}
+            // { src: 'src/pages/01_frontend'}
           },
         ],
-      },
-    }),
-  ],
-  optimizeDeps: {
-    exclude: [
-      'vuetify',
-      'vue-router',
-      'unplugin-vue-router/runtime',
-      'unplugin-vue-router/data-loaders',
-      'unplugin-vue-router/data-loaders/basic',
+      }),
+
+      Vue({
+        template: { transformAssetUrls },
+      }),
+      // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
+      Vuetify({
+        autoImport: true,
+        styles: {
+          configFile: "src/styles/settings.scss",
+        },
+      }),
+      Components(),
+      Fonts({
+        fontsource: {
+          families: [
+            {
+              name: "Roboto",
+              weights: [100, 300, 400, 500, 700, 900],
+              styles: ["normal", "italic"],
+            },
+          ],
+        },
+      }),
     ],
-  },
-  define: { 'process.env': {} },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('src', import.meta.url)),
+    optimizeDeps: {
+      exclude: [
+        "vuetify",
+        "vue-router",
+        "unplugin-vue-router/runtime",
+        "unplugin-vue-router/data-loaders",
+        "unplugin-vue-router/data-loaders/basic",
+      ],
     },
-    extensions: [
-      '.js',
-      '.json',
-      '.jsx',
-      '.mjs',
-      '.ts',
-      '.tsx',
-      '.vue',
-    ],
-  },
-  server: {
-    port: 3000,
-  },
-})
+    define: { "process.env": {} },
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("src", import.meta.url)),
+      },
+      extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
+    },
+    server: {
+      port: 3000,
+    },
+  });
+};
+
+// export default defineConfig({
+
+// })
