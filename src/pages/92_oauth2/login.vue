@@ -1,25 +1,49 @@
 <template>
+
   <v-app id="inspire">
+    <v-app-bar app>
+      <router-link to="/">
+        <U2wareAvatar></U2wareAvatar>
+      </router-link>
+
+      <v-toolbar-title> {{ $t("oauth2.index.title") }}</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn text variant="elevated" color="primary" to="/">
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <U2wareFooter></U2wareFooter>
+
     <v-main>
-      <v-container class="pa-12" fluid>
+
+      <v-container max-width="600px">
         <v-form validate-on="eager" @update:model-value="dialogValidate">
-          <h2>Please sign in </h2>
+          <h2 class="ms-12 mt-12">Please sign in</h2>
 
           <v-text-field
-            v-model="username2"
+            v-model="username"
             :rules="[$rules.requried]"
-            label="username"
-            placeholder="username"
+            label="Username"
+            placeholder="Username"
+            prepend-icon="mdi-account"
           ></v-text-field>
 
+
           <v-text-field
-            v-model="password2"
+            v-model="password"
             :rules="[$rules.requried]"
-            label="password"
-            placeholder="password"
+            :type="showPassword ? 'text' : 'password'"
+            label="Password"
+            prepend-icon="mdi-lock"
+            :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append-inner="showPassword = !showPassword"
           ></v-text-field>
 
             <v-btn
+              class="ms-10"
               variant="elevated"
               color="primary"
               text="Login"
@@ -29,15 +53,18 @@
 
         </v-form>
       </v-container>
-    </v-main>
-
-    <pre>{{ query }}</pre>
-
     <form ref="loginForm" method="post" action="/login">
-      <input ref="username" type="hidden" name="username" />
-      <input ref="password" type="hidden" name="password" />
+      <input ref="usernameForm" type="hidden" name="username" />
+      <input ref="passwordForm" type="hidden" name="password" />
     </form>
+    </v-main>
   </v-app>
+
+
+
+
+
+
 </template>
 
 <script>
@@ -45,10 +72,11 @@ const x = "[/login]";
 
 export default {
   data: () => ({
-    username2: undefined,
-    password2: undefined,
+    username: undefined,
+    password: undefined,
     validate: false,
-    query : undefined,
+
+    showPassword : false
   }),
 
   methods: {
@@ -59,10 +87,10 @@ export default {
     login() {
       console.log("login");
       let loginForm = this.$refs["loginForm"];
-      let username = this.$refs["username"];
-      let password = this.$refs["password"];
-      username.value = this.username2;
-      password.value = this.password2;
+      let usernameForm = this.$refs["usernameForm"];
+      let passwordForm = this.$refs["passwordForm"];
+      usernameForm.value = this.username;
+      passwordForm.value = this.password;
       loginForm.submit();
     },
   },
@@ -70,8 +98,8 @@ export default {
 
   mounted(){
     console.log(this.$route.query);
-
-    this.query = this.$route.query;
   }
 };
 </script>
+<style>
+</style>
